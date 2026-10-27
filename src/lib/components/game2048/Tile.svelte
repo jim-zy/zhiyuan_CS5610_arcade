@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { scale } from "svelte/transition"; 
+
     interface Props {
         value: number;
         row: number;
@@ -9,7 +11,7 @@
 </script>
 
 <div class="tile" style:--row={row} style:--col={col}>
-    <div class="face">{value}</div>
+    <div class="face" in:scale={{ duration: 150 }}>{value}</div>
 </div>
 
 <style>
@@ -32,5 +34,4 @@
         place-items: center;
         border-radius: 5px;
     }
-    
 </style>

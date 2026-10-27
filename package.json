@@ -25,6 +25,6 @@
 		"#lib/*": "./src/lib/*"
 	},
 	"dependencies": {
-		"@peacestay/arcade-core": "^0.1.0"
+		"@peacestay/arcade-core": "^0.2.0"
 	}
 }

@@ -7,7 +7,7 @@
     import GameOverlay from '#lib/components/game2048/GameOverlay.svelte';
     import ArrowPad from '#lib/components/game2048/ArrowPad.svelte';
 
-    const WIN_VALUE = 2048;
+    const WIN_VALUE = 8;
 
     const won = $derived(game.board.tiles.some(tile => tile.value >= WIN_VALUE));
     const over = $derived(game.board.tiles.length > 0 && !hasMoves(game.board));
