@@ -9,23 +9,21 @@
 </script>
 
 <div class="arrow-pad">
-    <button class="up" aria-label="Move Up" onclick={() => onMove('up')}>↑</button>
-    <button class="down" aria-label="Move Down" onclick={() => onMove('down')}>↓</button>
-    <button class="left" aria-label="Move Left" onclick={() => onMove('left')}>←</button>
-    <button class="right" aria-label="Move Right" onclick={() => onMove('right')}>→</button>
+    <button class="button up" aria-label="Move Up" onclick={() => onMove('up')}>↑</button>
+    <button class="button down" aria-label="Move Down" onclick={() => onMove('down')}>↓</button>
+    <button class="button left" aria-label="Move Left" onclick={() => onMove('left')}>←</button>
+    <button class="button right" aria-label="Move Right" onclick={() => onMove('right')}>→</button>
 </div>
 
 <style>
     .arrow-pad {
         display: none;
-        gap: 0.5rem;
-
     }
 
     @media (hover:none) and (pointer: coarse) {
         .arrow-pad {
             display: grid;
-            gap: 0.5rem;
+            gap: var(--space-2);
             justify-content: center;
         }
         .up    { grid-column: 2; grid-row: 1; }
@@ -36,7 +34,9 @@
         button {
             width: 50px;
             height: 50px;
-            font-size: 2rem;
+            font-size: var(--step-3);
+            padding: 0;
+            justify-content: center;
         }
     }
 </style>

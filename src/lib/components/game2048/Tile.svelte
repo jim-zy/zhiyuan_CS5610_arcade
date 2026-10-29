@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { scale } from "svelte/transition"; 
+    import { scale } from 'svelte/transition'; 
 
     interface Props {
         value: number;
@@ -10,8 +10,16 @@
     let { value, row, col }: Props = $props();
 </script>
 
-<div class="tile" style:--row={row} style:--col={col}>
-    <div class="face" in:scale={{ duration: 150 }}>{value}</div>
+<div 
+    class="tile" 
+    style:--row={row} 
+    style:--col={col}
+    style:--tile-bg={`var(--tile-${Math.min(value, 2048)})`}>
+    <div 
+        class="face"
+        class:dark-text={value >= 16}
+        class:small={value >= 1024}
+        in:scale={{ duration: 150 }}>{value}</div>
 </div>
 
 <style>
@@ -28,10 +36,19 @@
     .face {
         margin: var(--gap);
         height: calc(100% - 2 * var(--gap));
-        background-color: aliceblue;
-        font: bold 2em sans-serif;
+        background-color: var(--tile-bg);
         display: grid;
         place-items: center;
-        border-radius: 5px;
+        border-radius: var(--radius);
+        color: var(--color-text);
+        font-size: var(--step-3);
+        font-weight: 700;
+    }
+
+    .face.dark-text {
+        color: var(--color-on-accent);
+    }
+    .face.small {
+        font-size: var(--step-2);
     }
 </style>

@@ -1,0 +1,75 @@
+:root {
+    /* raw color tokens */
+    --gray-900: #0f1218;
+    --gray-800: #1a1d25;
+    --gray-700: #2a2e38;
+    --gray-500: #5b6170;
+    --gray-400: #9ca3af;
+    --gray-300: #d1d5db;
+    --gray-100: #f3f4f6;
+
+    /* accent color tokens */
+    --cyan-400: #22d3ee;
+    --cyan-300: #67e8f9;
+
+    /* semantic color tokens */
+    --color-bg: var(--gray-900);
+    --color-surface: var(--gray-800);
+    --color-border: var(--gray-700);
+    --color-text: var(--gray-100);
+    --color-text-muted: var(--gray-400);
+    --color-accent: var(--cyan-400);
+    --color-accent-hover: var(--cyan-300);
+    --color-focus: var(--cyan-400);
+    --color-on-accent: var(--gray-900);
+    --color-border-strong: var(--gray-500);
+    --color-cell: var(--gray-100);
+    --color-cell-text: var(--gray-900);
+    --color-cell-number: var(--gray-700);
+    --color-overlay: color-mix(in srgb, var(--gray-900) 85%, transparent);
+
+    /* 2048 board */
+    --board-size: min(90vw, 28rem);
+    /* 2048 tile ramp: one hue, lightness rises with the tile value */
+    --ramp-hue: 205;    /* cyan: matches --cyan-400 */
+
+    /* tile colors */
+    --tile-2:    oklch(42% 0.068 var(--ramp-hue));    /* light text 7.46:1 */
+    --tile-4:    oklch(47% 0.076 var(--ramp-hue));    /* light text 5.99:1 */
+    --tile-8:    oklch(52% 0.084 var(--ramp-hue));    /* light text 4.82:1 */
+    --tile-16:   oklch(70% 0.114 var(--ramp-hue));    /* dark text 7.34:1 */
+    --tile-32:   oklch(74% 0.120 var(--ramp-hue));    /* dark text 8.50:1 */
+    --tile-64:   oklch(78% 0.127 var(--ramp-hue));    /* dark text 9.81:1 */
+    --tile-128:  oklch(82% 0.130 var(--ramp-hue));    /* dark text 11.24:1 */
+    --tile-256:  oklch(86% 0.110 var(--ramp-hue));    /* dark text 12.72:1 */
+    --tile-512:  oklch(90% 0.090 var(--ramp-hue));    /* dark text 14.33:1 */
+    --tile-1024: oklch(94% 0.059 var(--ramp-hue));    /* dark text 16.03:1 */
+    --tile-2048: oklch(98% 0.019 var(--ramp-hue));    /* dark text 17.81:1 */
+    
+
+    /* font tokens */
+    --font-body: "Roboto", system-ui, sans-serif;
+    --font-display: "Roboto", system-ui, sans-serif;
+    /* type scale tokens */
+    --step--1: 0.8rem;
+    --step-0: 1rem;
+    --step-1: 1.25rem;
+    --step-2: 1.563rem;
+    --step-3: 1.953rem;
+    --step-4: 2.441rem;
+
+    /* space tokens */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+
+    /* miscellaneous tokens */
+    --measure: 65ch;
+    --radius: 0.5rem;
+    --tap-min: 44px;
+}

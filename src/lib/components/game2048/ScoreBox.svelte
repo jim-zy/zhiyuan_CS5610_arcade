@@ -14,18 +14,19 @@
 
 <style>
     .score-box {
-        background-color: #eee;
-        border-radius: 4px;
-        padding: 8px;
+        background-color: var(--color-surface);
+        border-radius: var(--radius);
+        padding: var(--space-2);
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     .label {
-        font-size: 0.8em;
+        color: var(--color-text-muted);
+        font-size: var(--step--1);
     }
     .value {
-        font-size: 1.2em;
+        font-size: var(--step-1);
         font-weight: bold;
     }
 </style>

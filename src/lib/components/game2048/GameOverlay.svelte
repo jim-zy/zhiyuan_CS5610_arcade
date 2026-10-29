@@ -12,9 +12,9 @@
 
 <div class="overlay" transition:fade={{ duration: 200 }}>
     <h2>{title}</h2>
-    <button onclick={onNewGame}>New Game</button>
+    <button class="button" onclick={onNewGame}>New Game</button>
     {#if onContinue}
-        <button onclick={onContinue}>Keep going</button>
+        <button class="button" onclick={onContinue}>Keep going</button>
     {/if}
 </div>
 
@@ -26,9 +26,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
-        background-color: rgba(255, 255, 255, 0.7);
-        border-radius: 8px;
+        gap: var(--space-4);
+        background-color: var(--color-overlay);
+        border-radius: var(--radius);
         z-index: 1;
     }
 </style>

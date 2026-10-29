@@ -64,7 +64,7 @@
         <h1>2048</h1>
         <ScoreBox label="Score" value={game.score} />
         <ScoreBox label="Best" value={game.best} />
-        <button onclick={newGame}>New Game</button>
+        <button class="button" onclick={newGame}>New Game</button>
     </div>
 
     <p class="visually-hidden" aria-live="polite">{announcement}</p>
@@ -73,14 +73,13 @@
     <div class="board-area">
         <Board tiles={game.board.tiles} />
 
-        <ArrowPad onMove={tryMove} />
-
         {#if over}
             <GameOverlay title="Game Over" onNewGame={newGame} />
         {:else if showWin}
             <GameOverlay title="You Win!" onNewGame={newGame} onContinue={continueGame} />
         {/if}
     </div> 
+    <ArrowPad onMove={tryMove} />
 </div>
 
 
@@ -89,38 +88,20 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
-        padding: 1rem;
+        gap: var(--space-4);
+        padding: var(--space-4);
     }
     .game-header {
         display: flex;
-        width: min(90vw, 28rem);
+        width: var(--board-size);
         align-items: center;
-        gap: 0.5rem;
+        gap: var(--space-2);
     }
     .board-area {
         position: relative;
     }
 
-    .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        clip-path: inset(50%);
-        white-space: nowrap;
-        border: 0;
-    }
-
     h1 {
-        font-size: 2em; 
         margin: 0 auto 0 0;
-    }
-    button {
-        padding: 8px 16px;
-        font-size: 1em;
     }
 </style>
