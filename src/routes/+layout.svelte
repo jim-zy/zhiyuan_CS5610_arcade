@@ -4,6 +4,8 @@
 	import '#lib/styles/tokens.css';
 	import '#lib/styles/base.css';
 	import '#lib/styles/layout.css';
+	import SiteHeader from '#lib/components/layout/SiteHeader.svelte';
+	import SiteFooter from '#lib/components/layout/SiteFooter.svelte';
 
 	let { children }: LayoutProps = $props();
 </script>
@@ -12,4 +14,9 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-{@render children()}
+<a class="skip-link" href="#main">Skip to main content</a>
+<SiteHeader />
+<main id="main">
+    {@render children()}
+</main>
+<SiteFooter />
