@@ -1,7 +1,6 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-node';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-import process from 'node:process';
 
 export default defineConfig({
 	plugins: [
@@ -11,11 +10,7 @@ export default defineConfig({
 				runes: ({ filename }) =>
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
-			adapter: adapter({fallback: `404.html`}),
-			paths: {
-				base: process.argv.includes('dev') ? '' : process.env.BASE_PATH as
-				`/${string}` | undefined
-			}
+			adapter: adapter()
 		})
 	]
 });

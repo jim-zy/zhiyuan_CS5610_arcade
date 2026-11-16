@@ -23,7 +23,7 @@
     <h2 id="message-heading">Send a message</h2>
     <p class="form-note">Submitting opens your email app with the message filled in.</p>
 
-    <form class="contact-form" action="mailto:jim.zy@outlook.com" method="post" enctype="text/plain">
+    <form class="form" action="mailto:jim.zy@outlook.com" method="post" enctype="text/plain">
         <label for="contact-name">Name</label>
         <input type="text" id="contact-name" name="name" autocomplete="name" required>
 
@@ -77,37 +77,5 @@
     .form-note {
         color: var(--color-text-muted);
         font-size: var(--step--1);
-    }
-
-    /* Form */
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: var(--space-2);
-        max-width: 32rem;
-    }
-
-    .contact-form label {
-        font-weight: 700;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-        min-height: var(--tap-min);
-        margin-bottom: var(--space-3);
-        padding: var(--space-2) var(--space-3);
-        border: 1px solid var(--color-border-strong);
-        border-radius: var(--radius);
-        background-color: var(--color-surface);
-        color: var(--color-text);
-    }
-
-    .contact-form textarea {
-        resize: vertical;
-    }
-
-    .contact-form .button {
-        align-self: flex-start;
     }
 </style>
