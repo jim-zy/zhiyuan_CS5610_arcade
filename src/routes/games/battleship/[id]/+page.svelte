@@ -51,14 +51,13 @@
 </svelte:head>
 
 <h1>Battleship</h1>
-<p aria-live="polite">{statusText}</p>
-{#if pending}<p>Firing...</p>{/if}
-<button onclick={() => refreshAll()}>Refresh</button>
+<h2 aria-live="polite">{pending ? 'Firing...' : statusText}</h2>
+<button class="button" onclick={() => refreshAll()}>Refresh</button>
 
 {#if me && opponent}
     <BattleshipBoard board={me.board} label="Your fleet" />
     
-    <p>click on a cell to fire</p>
+    <h3>click on a cell to fire</h3>
     <BattleshipBoard
      board={opponent.board}
      onfire={fire}

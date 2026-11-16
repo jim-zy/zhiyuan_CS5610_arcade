@@ -23,7 +23,7 @@
         };
     }}
     action="?/create">
-    <button disabled={creating}>
+    <button class="button" disabled={creating}>
         {creating ? 'Creating game...' : 'New Game'}
     </button>
 </form>
@@ -43,7 +43,7 @@
                 }}
                 action="?/join">
                 <input type="hidden" name="id" value={game.id} />
-                <button disabled={joining}>
+                <button class="button"disabled={joining}>
                     {joining ? 'Joining game...' : 'Join'}
                 </button>
             </form>
